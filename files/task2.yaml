@@ -1,0 +1,148 @@
+swagger: "2.0"
+info:
+  title: homework3t2
+  description: API for basic arithmetic operations.
+  version: 1.0.0
+host: homework3t2.apigateway.homew2-415309.cloud.goog
+
+basePath: /
+schemes:
+  - https
+  - http
+
+paths:
+  /add:
+    post:
+      operationId: addOperation
+      summary: Add two numbers.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              X:
+                type: integer
+              Y:
+                type: integer
+      responses:
+        200:
+          description: Successful response with the sum of two numbers.
+          schema:
+            type: object
+            properties:
+              X:
+                type: integer
+              Y:
+                type: integer
+              Result:
+                type: integer
+      x-google-backend:
+        address: https://add-tdkoc6nlqa-uc.a.run.app
+
+  /sub:
+    post:
+      operationId: subOperation
+      summary: Subtract two numbers.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              X:
+                type: integer
+              Y:
+                type: integer
+      responses:
+        200:
+          description: Successful response with the difference of two numbers.
+          schema:
+            type: object
+            properties:
+              X:
+                type: integer
+              Y:
+                type: integer
+              Result:
+                type: integer
+      x-google-backend:
+        address: https://sub-tdkoc6nlqa-uc.a.run.app
+
+  /mul:
+    post:
+      operationId: mulOperation
+      summary: Multiply two numbers.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              X:
+                type: integer
+              Y:
+                type: integer
+      responses:
+        200:
+          description: Successful response with the product of two numbers.
+          schema:
+            type: object
+            properties:
+              X:
+                type: integer
+              Y:
+                type: integer
+              Result:
+                type: integer
+      x-google-backend:
+        address: https://mul-tdkoc6nlqa-uc.a.run.app
+
+  /div:
+    post:
+      operationId: divOperation
+      summary: Divide two numbers.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              X:
+                type: integer
+              Y:
+                type: integer
+      responses:
+        200:
+          description: Successful response with the quotient of two numbers.
+          schema:
+            type: object
+            properties:
+              X:
+                type: integer
+              Y:
+                type: integer
+              Result:
+                type: integer
+      x-google-backend:
+        address: https://div-tdkoc6nlqa-uc.a.run.app
