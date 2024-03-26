@@ -1,0 +1,147 @@
+swagger: "2.0"
+info:
+  title: homeWork33
+  description: API for basic arithmetic operations.
+  version: 1.0.0
+host: homework33.apigateway.homew2-415309.cloud.goog
+basePath: /
+schemes:
+  - https
+  - http
+
+paths:
+  /add:
+    post:
+      operationId: addOperation
+      summary: Add two numbers.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              X:
+                type: integer
+              Y:
+                type: integer
+      responses:
+        200:
+          description: Successful response with the sum of two numbers.
+          schema:
+            type: object
+            properties:
+              X:
+                type: integer
+              Y:
+                type: integer
+              Result:
+                type: integer
+      x-google-backend:
+        address: https://us-central1-homew2-415309.cloudfunctions.net/add-function
+
+  /sub:
+    post:
+      operationId: subOperation
+      summary: Subtract two numbers.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              X:
+                type: integer
+              Y:
+                type: integer
+      responses:
+        200:
+          description: Successful response with the difference of two numbers.
+          schema:
+            type: object
+            properties:
+              X:
+                type: integer
+              Y:
+                type: integer
+              Result:
+                type: integer
+      x-google-backend:
+        address: https://us-central1-homew2-415309.cloudfunctions.net/sub-function
+
+  /mul:
+    post:
+      operationId: mulOperation
+      summary: Multiply two numbers.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              X:
+                type: integer
+              Y:
+                type: integer
+      responses:
+        200:
+          description: Successful response with the product of two numbers.
+          schema:
+            type: object
+            properties:
+              X:
+                type: integer
+              Y:
+                type: integer
+              Result:
+                type: integer
+      x-google-backend:
+        address: https://us-central1-homew2-415309.cloudfunctions.net/mul-function
+
+  /div:
+    post:
+      operationId: divOperation
+      summary: Divide two numbers.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              X:
+                type: integer
+              Y:
+                type: integer
+      responses:
+        200:
+          description: Successful response with the quotient of two numbers.
+          schema:
+            type: object
+            properties:
+              X:
+                type: integer
+              Y:
+                type: integer
+              Result:
+                type: integer
+      x-google-backend:
+        address: https://us-central1-homew2-415309.cloudfunctions.net/div-function
